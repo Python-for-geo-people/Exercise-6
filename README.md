@@ -4,7 +4,7 @@ We have two data files that we will load and analyse.
 They should be somewhat familiar already.
 
 ## Sections
-- [Problem 0: Creating a plotly account]
+- [Problem 0: Creating a plotly account](#problem-0-creating-a-plotly-account)
 - [Problem 1: NOAA climate data revisited](#problem-1-noaa-climate-data-revisited)
 - [Problem 2: Volcanoes again? Dealing with tricky data files](#problem-2-volcanoes-again-dealing-with-tricky-data-files)
 - [Optional tasks for advanced students](#optional-tasks-for-advanced-students)
