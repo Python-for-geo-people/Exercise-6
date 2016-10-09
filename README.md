@@ -24,7 +24,7 @@ As a reminder, you will be working with a climate data file from the [US Nationa
 The data file [`816295.csv`](Data/816295.csv) comprises daily temperature measurements (in Fahrenheit) from several stations in the vicinity of the town of Ann Arbor, Michigan in the US from 1 January 1926 to 31 December 2015.
 
 You job in this problem is to again calculate the mean annual winter and summer temperatures from 1926-2015.
-Again?!?
+*Again?!?*
 Yes, but this time we're going to make a few changes to make better estimates.
 Your script should:
 1. Use the `np.loadtxt()` method to read in the [`816295.csv`](Data/816295.csv) data file ignoring the header.
