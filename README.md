@@ -77,9 +77,9 @@ If you like, you can load only the "columns" from the file that contain the volc
 You can do this visually in a text editor or use the `diff` command in a Terminal window.
 You can use `diff` as shown below:
 
-```bash
-$ diff <file1> <file2>
-```
+    ```bash
+    $ diff <file1> <file2>
+    ```
 The results will be a list of the differences in the two files on a character-by-character basis.
 Note that if your output format for step 2 is different than the `GVP-Volcano-Lat-Lon-Elev.csv` file, you will see differences on every line.
 
