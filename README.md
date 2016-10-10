@@ -27,6 +27,7 @@ You job in this problem is to again calculate the mean annual winter and summer 
 *Again?!?*
 Yes, but this time we're going to make a few changes to make better estimates.
 Your script should:
+
 1. Use the `np.loadtxt()` method to read in the [`816295.csv`](Data/816295.csv) data file ignoring the header.
 2. Calculate the mean and standard deviation of the temperature values in the data file.
 3. Remove any "bad" temperature values. Here, we will say that a "bad" temperature is any temperature high or lower than the mean plus or minus four times the standard deviation.
