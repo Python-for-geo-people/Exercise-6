@@ -28,23 +28,16 @@ You job in this problem is to again calculate the mean annual winter and summer 
 Yes, but this time we're going to make a few changes to make better estimates.
 Your script should:
 1. Use the `np.loadtxt()` method to read in the [`816295.csv`](Data/816295.csv) data file ignoring the header.
-2. 
-3. 
-4. 
-
-
-
-
-
-
-- Sort
-- Detect and remove outliers?
-- Re-calculate summer and winter average temps
-- Save to GitHub
-
-
-
-Your task is to process this data to calculate average annual temperatures for the summer and winter in each year covered by the data.
+2. Calculate the mean and standard deviation of the temperature values in the data file.
+3. Remove any "bad" temperature values. Here, we will say that a "bad" temperature is any temperature high or lower than the mean plus or minus four times the standard deviation.
+4. Sort the remaining data by the date.
+5. Loop over all of the data by year and properly calculate the seasonal average temperatures.
+In this case, the summer average temperature should include the months of June, July, and August.
+The winter average temperature should include January, February, and December from the previous year.
+Thus, you should only calculate seasonal averages for 1927 to 2015, since we have incomplete data for 1926 (no data for December 1925).
+6. Use NumPy to write out the seasonal average data files for winter (`winter-avg-temps-numpy.csv`) and summer (`summer-avg-temps-numpy.csv`).
+7. Save these files to your GitHub repository for this exercise.
+Again, we will use these files next week when we explore plotting with Matplotlib.
 
 ## Problem 2: Volcanoes again? Dealing with tricky data files
 
