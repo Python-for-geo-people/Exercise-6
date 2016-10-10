@@ -30,15 +30,20 @@ Your script should:
 
 1. Use the `np.loadtxt()` method to read in the [`816295.csv`](Data/816295.csv) data file ignoring the header.
 2. Calculate the mean and standard deviation of the temperature values in the data file.
-3. Remove any "bad" temperature values. Here, we will say that a "bad" temperature is any temperature high or lower than the mean plus or minus four times the standard deviation.
+3. Remove any "bad" temperature values. Here, we will say that a "bad" temperature is any temperature high or lower than the mean plus or minus four times the standard deviation (μ ± 4σ).
 4. Sort the remaining data by the date.
 5. Loop over all of the data by year and properly calculate the seasonal average temperatures.
 In this case, the summer average temperature should include the months of June, July, and August.
 The winter average temperature should include January, February, and December from the previous year.
 Thus, you should only calculate seasonal averages for 1927 to 2015, since we have incomplete data for 1926 (no data for December 1925).
-6. Use NumPy to write out the seasonal average data files for winter (`winter-avg-temps-numpy.csv`) and summer (`summer-avg-temps-numpy.csv`).
+6. Use the NumPy method `np.savetxt()` to write out the seasonal average data files for winter (`winter-avg-temps-numpy.csv`) and summer (`summer-avg-temps-numpy.csv`).
+You may want to refer to the [NumPy documentation on `np.savetxt()`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.savetxt.html) to see how it works, or use the object inspector in **Spyder**.
 7. Save these files to your GitHub repository for this exercise.
 Again, we will use these files next week when we explore plotting with Matplotlib.
+
+**Note**: We are not creating annual data files this time, but simply working with the one larger data file.
+This will take a bit of thought in terms of how to refer to certain months and years in the file, particularly since the default in NumPy is to load data as numerical values, not character strings.
+In other words, you may want to refer to the [hints](https://github.com/Python-for-geo-people/Lesson-6-Intro-to-NumPy/blob/master/Lesson/hints.md) :smile:.
 
 ## Problem 2: Volcanoes again? Dealing with tricky data files
 
