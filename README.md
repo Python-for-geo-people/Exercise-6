@@ -2,13 +2,15 @@
 This week we will continue working with real data files, but with NumPy instead of the basic Python tools.
 We have two data files that we will load and analyse.
 They should be somewhat familiar already.
+Note that you are only required to complete Problem 1.
+Problem 2 is optional.
 
 ## Sections
 - [Problem 0: Creating a plotly account](#problem-0-creating-a-plotly-account)
 - [Problem 1: NOAA climate data revisited](#problem-1-noaa-climate-data-revisited)
 - [Optional tasks for advanced students](#optional-tasks-for-advanced-students)
-  - [Optional tasks for Problem 1]()
-  - [(*Optional*) Problem 2: Volcanoes again? Dealing with tricky data files](#problem-2-volcanoes-again-dealing-with-tricky-data-files)
+  - [Optional tasks for Problem 1](#optional-tasks-for-problem-1)
+  - [(*Optional*) Problem 2: Volcanoes again? Dealing with tricky data files](#optional-problem-2-volcanoes-again-dealing-with-tricky-data-files)
 - [Hints](#hints)
 - [Your answers](#answers)
 
@@ -30,6 +32,7 @@ Yes, but this time we're going to make a few changes to make better estimates.
 Your script should:
 
 1. Use the `np.loadtxt()` method to read in the [`816295.csv`](Data/816295.csv) data file ignoring the header.
+Note that we only want the data for the dates and temperatures, not the entire contents of the data file.
 2. Calculate the mean and standard deviation of the temperature values in the data file.
 3. Remove any "bad" temperature values. Here, we will say that a "bad" temperature is any temperature high or lower than the mean plus or minus four times the standard deviation (μ ± 4σ).
 4. Sort the remaining data by the date.
@@ -49,7 +52,36 @@ In other words, you may want to refer to the [hints](https://github.com/Python-f
 ## Optional tasks for advanced students
 ### Optional tasks for Problem 1
 
+- Define data types when reading in the data file by using the `dtype` option in `np.loadtxt()`.
+You might consider defining the dates as type `int` and the temperatures as type `float`.
+- Rather than appending to a list of seasonal average temperatures, define two empty NumPy arrays of the correct dimensions up front and use index values to fill the arrays with the years and seasonal average temperatures.
+- Use the `fmt` option when saving the seasonal average data files using `np.savetxt()`.
+With `fmt` you should be able to have nice integer values for the years and decimal values rounded to 1-2 decimal places for the average temperatures.
+
 ### (*Optional*) Problem 2: Volcanoes again? Dealing with tricky data files
+**This problem is optional, just to be perfectly clear**.
+
+Here we face the reality of a data file that contains not only non-numerical values, but also special characters (e.g., ö or é).
+For this problem, we will use the [Smithsonian Institution's](http://volcano.si.edu/) complete Holocene volcano [database file `GVP-Volcano-List.csv`](Data/GVP-Volcano-List.csv).
+For most files, there is not a problem to load the data using `np.loadtxt()` even if there are a mix of numerical and non-numerical values in the files.
+However, if you try to load the `GVP-Volcano-List.csv` data file, which has special characters in some of the geographical data you will have trouble, even if you try to only load the "columns" containing numerical data such as the volcano ID, latitude, or elevation.
+
+In this problem, you need to use the `np.genfromtxt()` method to load the `GVP-Volcano-List.csv` file, and ultimately manipulate the loaded data to reproduce the values in the `GVP-Volcano-Lat-Lon-Elev.csv` file.
+To do this you should:
+
+1. Load the `GVP-Volcano-List.csv` data file using the `np.genfromtxt()` method, skipping the header.
+If you like, you can load only the "columns" from the file that contain the volcano ID, latitude, longitude, or elevation.
+**Note**: The options for `np.genfromtxt()` differ slightly from `np.loadtxt()`, so you will likely need to refer to the [online documentation for `np.genfromtxt()`](http://docs.scipy.org/doc/numpy/reference/generated/numpy.genfromtxt.html).
+2. Write out your new data file as `GVP-Volcano-Lat-Lon-Elev-NumPy.csv` using the `fmt` options to reproduce the formatting of the `GVP-Volcano-Lat-Lon-Elev.csv` file as closely as possible.
+3. Compare the two files.
+You can do this visually in a text editor or use the `diff` command in a Terminal window.
+You can use `diff` as shown below:
+
+```bash
+$ diff <file1> <file2>
+```
+The results will be a list of the differences in the two files on a character-by-character basis.
+Note that if your output format for step 2 is different than the `GVP-Volcano-Lat-Lon-Elev.csv` file, you will see differences on every line.
 
 ## Hints
 You can find some [hints for completing this week's exercise](https://github.com/Python-for-geo-people/Lesson-6-Intro-to-NumPy/blob/master/Lesson/hints.md) in the materials for Lesson 6.
