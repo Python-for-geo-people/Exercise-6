@@ -11,7 +11,7 @@ Problem 2 is optional.
 - [Optional tasks for advanced students](#optional-tasks-for-advanced-students)
   - [Optional tasks for Problem 1](#optional-tasks-for-problem-1)
   - [(*Optional*) Problem 2: Volcanoes again? Dealing with tricky data files](#optional-problem-2-volcanoes-again-dealing-with-tricky-data-files)
-- [Hints](#hints)
+- [Hints](https://github.com/Python-for-geo-people/Lesson-6-Intro-to-NumPy/blob/master/Lesson/hints.md)
 - [Your answers](#answers)
 
 ## Problem 0: Creating a plotly account
